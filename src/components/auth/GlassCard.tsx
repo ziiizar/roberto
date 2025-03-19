@@ -10,10 +10,10 @@ import { useTheme } from "@/context/ThemeContext"
 interface SpaceCardProps {
   children?: React.ReactNode
   className?: string
-  variant?: "default" | "auth"
+  // variant?: "default" | "auth"
 }
 
-export default function GlassCard({ children, className = "", variant = "default" }: SpaceCardProps) {
+export default function GlassCard({ children, className = ""}: SpaceCardProps) {
   const { theme } = useTheme();
   const isDarkMode = theme === 'dark';
   
