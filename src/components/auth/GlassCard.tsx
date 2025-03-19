@@ -3,9 +3,9 @@
 import type React from "react"
 
 import { motion } from "framer-motion"
-import Stars from "./Stars"
+
 import { useTheme } from "@/context/ThemeContext"
-import { cn } from "@/lib/utils"
+
 
 interface SpaceCardProps {
   children?: React.ReactNode
