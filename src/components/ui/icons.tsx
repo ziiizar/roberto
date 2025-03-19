@@ -1,228 +1,153 @@
-import React from "react";
-import { useTheme } from "@/context/ThemeContext";
-
-export const EmailIcon = () => {
-  const { theme } = useTheme();
-  const isDarkMode = theme === 'dark';
-  
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <g
-        stroke={isDarkMode ? "#ffffff" : "#121212"}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        clipPath="url(#clip0_1_4052)"
-      >
-        <path d="M19 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2"></path>
-        <path d="m3 7 9 6 9-6"></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_1_4052">
-          <path fill="#fff" d="M0 0h24v24H0z"></path>
-        </clipPath>
-      </defs>
-    </svg>
-  );
-};
-
-export const PasswordIcon: React.FC<React.SVGProps<SVGElement>> = () => {
-  const { theme } = useTheme();
-  const isDarkMode = theme === 'dark';
-  
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke={isDarkMode ? "#ffffff" : "#121212"}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M11.02 19.5H7.5c-.62 0-1.17-.02-1.66-.09-2.63-.29-3.34-1.53-3.34-4.91v-5c0-3.38.71-4.62 3.34-4.91.49-.07 1.04-.09 1.66-.09h3.46M15.02 4.5h1.48c.62 0 1.17.02 1.66.09 2.63.29 3.34 1.53 3.34 4.91v5c0 3.38-.71 4.62-3.34 4.91-.49.07-1.04.09-1.66.09h-1.48M15 2v20M11.095 12h.008M7.094 12h.01"
-      ></path>
-    </svg>
-  );
-};
-
-export const EyeIcon: React.FC<React.SVGProps<SVGElement>> = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    fill="none"
-    viewBox="0 0 20 20"
-  >
-    <path
-      stroke="#989796"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.6"
-      d="m12.108 7.892-4.216 4.216a2.98 2.98 0 1 1 4.217-4.217"
-    ></path>
-    <path
-      stroke="#989796"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.6"
-      d="M14.85 4.808c-1.458-1.1-3.125-1.7-4.85-1.7-2.942 0-5.683 1.734-7.592 4.734-.75 1.175-.75 3.15 0 4.325a12 12 0 0 0 2.259 2.641M7.017 16.275c.95.4 1.958.617 2.983.617 2.942 0 5.683-1.734 7.592-4.734.75-1.175.75-3.15 0-4.325a14 14 0 0 0-.884-1.225"
-    ></path>
-    <path
-      stroke="#989796"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.6"
-      d="M12.925 10.583a2.97 2.97 0 0 1-2.35 2.35M7.892 12.108l-6.225 6.225M18.333 1.667l-6.225 6.225"
-    ></path>
-  </svg>
-);
-
-export const MoonIcon: React.FC<React.SVGProps<SVGElement>> = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="36"
-    height="36"
-    fill="none"
-    viewBox="0 0 36 36"
-  >
-    <path
-      fill="#121212"
-      fillOpacity="0.4"
-      d="M10.022 18.338c.298 4.119 3.908 7.47 8.228 7.654 3.048.128 5.774-1.248 7.41-3.415.677-.888.313-1.48-.818-1.28a8 8 0 0 1-1.719.112c-4.039-.16-7.343-3.431-7.36-7.294a6.9 6.9 0 0 1 .62-2.92c.446-.991-.09-1.463-1.123-1.04-3.272 1.337-5.51 4.528-5.238 8.183"
-    ></path>
-  </svg>
-);
-
-export const SunIcon: React.FC<React.SVGProps<SVGElement>> = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="44"
-    height="44"
-    fill="none"
-    viewBox="0 0 44 44"
-  >
-    <path
-      fill="#292929"
-      stroke="#292929"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.2"
-      d="M28.504 22a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"
-    ></path>
-    <path
-      fill="#292929"
-      d="m29.007 14.991.13-.13zm-14.15 14.15.13-.13zm7.14-17.06v-.08zm0 19.92v-.08zm-9.92-10h-.08zm19.92 0h-.08zm-17.01-7.01-.13-.13zm14.15 14.15-.13-.13z"
-    ></path>
-    <path
-      stroke="#292929"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.2"
-      d="m29.137 29.141-.13-.13m0-14.02.13-.13zm-14.15 14.15.13-.13zm7.14-17.06v-.08zm0 19.92v-.08zm-9.92-10h-.08zm19.92 0h-.08zm-17.01-7.01-.13-.13z"
-    ></path>
-  </svg>
-);
-
-export const PhoneIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    width="20"
-    height="20"
-    
-    {...props}
-  >
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-  </svg>
-);
 
 export const Logo: React.FC<React.SVGProps<SVGElement>> = () => (
   <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="38"
+  height="16"
+  fill="none"
+  viewBox="0 0 38 16"
+>
+  <path
+    fill="url(#paint0_linear_11_11513)"
+    d="M7.386 13.846c0 1.045 5.005 1.948 11.128 1.948s11.128-.855 11.128-1.948c0-.095.486-3.374 7.823-11.499-4.81 2.09-10.447 6.415-11.468 6.272C23.227 8.192 18.66.542 18.66.542s-5.297 7.745-8.358 7.84C8.747 8.429 4.179 3.725.389 2.157c5.637 5.75 6.997 11.546 6.997 11.689"
+  ></path>
+  <defs>
+    <linearGradient
+      id="paint0_linear_11_11513"
+      x1="0.425"
+      x2="37.448"
+      y1="8.155"
+      y2="8.155"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0.038" stopColor="#E4BA66"></stop>
+      <stop offset="0.285" stopColor="#FFC826"></stop>
+      <stop offset="0.451" stopColor="#DC9600"></stop>
+      <stop offset="0.903" stopColor="#804904"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+);
+
+
+
+
+
+export const TogglerIcon: React.FC<React.SVGProps<SVGElement>> = () => (
+  <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="148"
-    height="20"
+    width="22"
+    height="14"
     fill="none"
-    viewBox="0 0 148 20"
-    className="fill-black dark:fill-white"
+    viewBox="0 0 22 14"
   >
     <path
-      
-      d="M0 19.672V.546h6.596c6.706 0 9.827 3.77 9.827 9.563s-3.12 9.563-9.827 9.563zm3.558-3.033h2.847c4.79 0 6.377-2.431 6.377-6.53 0-4.07-1.587-6.557-6.377-6.557H3.558zM18.327 3.88V.437h3.448V3.88zm-.082 15.792V6.12h3.558v13.552zM23.826 19.672V6.12h3.558v2.077c.712-1.366 1.807-2.213 3.23-2.213h1.724v3.169h-2.08c-1.998 0-2.874 1.585-2.874 4.645v5.874zM39.237 20c-4.16 0-7.061-2.841-7.061-6.994 0-4.208 2.819-7.214 7.061-7.214 4.051 0 6.816 2.897 6.816 6.667 0 .383 0 .82-.055 1.284H35.707c.164 2.104 1.614 3.36 3.503 3.36 1.368 0 2.354-.682 2.846-1.693h3.614c-.767 2.596-3.176 4.59-6.433 4.59m.028-11.339c-1.697 0-3.12.956-3.476 2.896h6.678c-.11-1.748-1.45-2.896-3.202-2.896M54.254 20c-4.16 0-7.116-2.924-7.116-7.104 0-4.153 2.956-7.104 7.116-7.104 3.449 0 5.994 1.913 6.651 5.082h-3.75c-.328-1.257-1.478-2.049-2.928-2.049-1.916 0-3.449 1.503-3.449 4.071s1.533 4.071 3.449 4.071c1.45 0 2.6-.737 2.928-2.049h3.75c-.63 3.06-3.202 5.082-6.65 5.082M67.723 19.672c-2.737 0-4.188-.71-4.188-4.18V9.098H61.21V6.12h2.326V2.486h3.558V6.12h3.422v2.978h-3.422v5.957c0 1.366.329 1.584 1.697 1.584h1.643v3.033zM80.682 20c-5.802 0-9.306-4.016-9.306-9.863S74.88.219 80.682.219c4.599 0 7.692 2.377 8.43 6.53h-3.94c-.439-2.077-1.999-3.306-4.544-3.306-3.504 0-5.639 2.54-5.639 6.694 0 4.153 2.135 6.666 5.638 6.666 2.546 0 4.079-1.12 4.544-3.196h3.914C88.374 17.623 85.281 20 80.682 20M97.224 20c-4.078 0-7.253-2.896-7.253-7.104 0-4.207 3.202-7.104 7.253-7.104 4.078 0 7.253 2.897 7.253 7.104S101.302 20 97.224 20m0-3.06c1.97 0 3.586-1.366 3.586-4.044s-1.642-4.044-3.586-4.044-3.586 1.367-3.586 4.044c0 2.678 1.615 4.044 3.586 4.044M112.173 20c-3.859 0-6.706-3.06-6.706-7.131s2.847-7.077 6.706-7.077c2.026 0 3.559.793 4.489 2.159V0h3.558v19.672h-3.558v-1.94c-.848 1.202-2.217 2.268-4.489 2.268m.767-3.087c2.244 0 3.804-1.694 3.804-4.017 0-2.35-1.56-4.016-3.804-4.016-2.217 0-3.832 1.666-3.832 3.989 0 2.35 1.615 4.044 3.832 4.044M128.83 20c-4.16 0-7.061-2.841-7.061-6.994 0-4.208 2.819-7.214 7.061-7.214 4.051 0 6.816 2.897 6.816 6.667 0 .383 0 .82-.055 1.284h-10.292c.165 2.104 1.615 3.36 3.504 3.36 1.368 0 2.354-.682 2.847-1.693h3.612c-.766 2.596-3.175 4.59-6.432 4.59m.028-11.339c-1.697 0-3.121.956-3.476 2.896h6.678c-.109-1.748-1.451-2.896-3.202-2.896M142.143 20c-3.586 0-6.104-1.803-6.378-4.617h3.641c.246 1.147 1.395 1.885 2.873 1.885 1.561 0 2.409-.656 2.409-1.503 0-.683-.52-1.065-1.998-1.257-.547-.054-1.56-.246-2.135-.355-2.244-.437-4.106-1.64-4.106-4.071 0-2.404 1.834-4.29 5.31-4.29 3.449 0 5.584 1.585 5.858 4.372h-3.449c-.109-1.093-1.177-1.64-2.381-1.64-1.451 0-2.217.602-2.217 1.367 0 .71.629 1.093 1.806 1.311.493.082 1.752.273 2.327.355 2.135.3 4.297 1.12 4.297 3.907 0 2.678-2.108 4.536-5.857 4.536"
+      stroke="#919399"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M9 1h12M1 7h20M9 13h12M5 11 1 7l4-4"
     ></path>
   </svg>
 );
 
-export const GoogleIcon: React.FC<React.SVGProps<SVGElement>> = () => (
+export const Casino= () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    fill="none"
-    viewBox="0 0 20 20"
-  >
-    <g clipPath="url(#clip0_1_4084)">
+  xmlns="http://www.w3.org/2000/svg"
+  width="52"
+  height="48"
+  fill="none"
+  viewBox="0 0 52 48"
+>
+  <g filter="url(#filter0_d_268_12)">
+    <g opacity="0.99">
       <path
-        fill="#4285F4"
-        d="M19.805 10.23c0-.68-.055-1.363-.172-2.032H10.2v3.851h5.402a4.63 4.63 0 0 1-2 3.039v2.499h3.223c1.893-1.742 2.98-4.314 2.98-7.357"
+        fill="url(#paint0_radial_268_12)"
+        d="M18.354 23.538v1.849a.6.6 0 0 0 .585.613H33.06a.6.6 0 0 0 .586-.613v-1.85z"
       ></path>
       <path
-        fill="#34A853"
-        d="M10.2 20c2.697 0 4.972-.885 6.629-2.413l-3.223-2.499c-.896.61-2.054.955-3.402.955-2.61 0-4.821-1.76-5.615-4.126H1.264v2.576A10 10 0 0 0 10.2 20"
-      ></path>
-      <path
-        fill="#FBBC04"
-        d="M4.586 11.917a6 6 0 0 1 0-3.829V5.512H1.264a10.01 10.01 0 0 0 0 8.98z"
-      ></path>
-      <path
-        fill="#EA4335"
-        d="M10.2 3.958a5.43 5.43 0 0 1 3.836 1.5l2.855-2.856A9.6 9.6 0 0 0 10.2.001a10 10 0 0 0-8.936 5.511l3.321 2.576c.79-2.37 3.006-4.13 5.615-4.13"
+        fill="url(#paint1_radial_268_12)"
+        d="M35.73 12.56a.565.565 0 0 0-.682.037l-4.266 3.57a.63.63 0 0 0-.17.724q.096.236.097.494c0 .68-.529 1.233-1.179 1.233s-1.179-.553-1.179-1.233c0-.4.187-.778.501-1.01a.63.63 0 0 0 .187-.774l-2.515-5.262A.58.58 0 0 0 26 10a.58.58 0 0 0-.524.339L22.96 15.6a.63.63 0 0 0 .187.775c.314.231.5.608.5 1.009 0 .68-.528 1.233-1.178 1.233s-1.18-.553-1.18-1.233q0-.259.099-.493a.63.63 0 0 0-.171-.725l-4.266-3.57a.565.565 0 0 0-.683-.037.63.63 0 0 0-.252.664l2.172 9.088h15.622l2.172-9.088a.63.63 0 0 0-.252-.665"
       ></path>
     </g>
-    <defs>
-      <clipPath id="clip0_1_4084">
-        <path fill="#fff" d="M0 0h20v20H0z"></path>
-      </clipPath>
-    </defs>
-  </svg>
+  </g>
+  <defs>
+    <radialGradient
+      id="paint0_radial_268_12"
+      cx="0"
+      cy="0"
+      r="1"
+      gradientTransform="matrix(0 2.43916 -18.9374 0 25.961 23.538)"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stopColor="#73DEFB"></stop>
+      <stop offset="0.484" stopColor="#28C5F0"></stop>
+      <stop offset="1" stopColor="#0D91B5"></stop>
+    </radialGradient>
+    <radialGradient
+      id="paint1_radial_268_12"
+      cx="0"
+      cy="0"
+      r="1"
+      gradientTransform="matrix(0 12.1958 -24.7662 0 25.95 10)"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stopColor="#73DEFB"></stop>
+      <stop offset="0.484" stopColor="#28C5F0"></stop>
+      <stop offset="1" stopColor="#0D91B5"></stop>
+    </radialGradient>
+    <filter
+      id="filter0_d_268_12"
+      width="51.031"
+      height="47.031"
+      x="0.484"
+      y="0.303"
+      colorInterpolationFilters="sRGB"
+      filterUnits="userSpaceOnUse"
+    >
+      <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+      <feColorMatrix
+        in="SourceAlpha"
+        result="hardAlpha"
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+      ></feColorMatrix>
+      <feOffset dy="5.818"></feOffset>
+      <feGaussianBlur stdDeviation="7.758"></feGaussianBlur>
+      <feComposite in2="hardAlpha" operator="out"></feComposite>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"></feColorMatrix>
+      <feBlend
+        in2="BackgroundImageFix"
+        result="effect1_dropShadow_268_12"
+      ></feBlend>
+      <feBlend
+        in="SourceGraphic"
+        in2="effect1_dropShadow_268_12"
+        result="shape"
+      ></feBlend>
+    </filter>
+  </defs>
+</svg>
 );
 
-export const FacebookIcon: React.FC<React.SVGProps<SVGElement>> = () => (
+export const Sport = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
+    width="16"
+    height="16"
     fill="none"
-    viewBox="0 0 20 20"
+    viewBox="0 0 16 16"
   >
-    <g clipPath="url(#clip0_1_4087)">
-      <path
-        fill="#1877F2"
-        d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.093 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.563V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.129 20 14.991 20 10"
-      ></path>
-      <path
-        fill="#fff"
-        d="m13.893 12.89.443-2.89h-2.774V8.125c0-.79.388-1.562 1.63-1.562h1.261V4.102s-1.144-.196-2.238-.196c-2.285 0-3.777 1.385-3.777 3.89V10h-2.54v2.89h2.54v6.988c1.035.163 2.09.163 3.124 0v-6.988z"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_1_4087">
-        <path fill="#fff" d="M0 0h20v20H0z"></path>
-      </clipPath>
-    </defs>
+    <path
+      fill="#919399"
+      d="M2.675 13.989A7.95 7.95 0 0 0 7.53 16v-2.368a6.11 6.11 0 0 1 6.102-6.102h2.367a7.95 7.95 0 0 0-2.01-4.855z"
+    ></path>
+    <path
+      fill="#919399"
+      d="M13.632 8.47a5.17 5.17 0 0 0-5.162 5.162V16a7.96 7.96 0 0 0 5.197-2.333A7.96 7.96 0 0 0 16 8.47zM13.325 2.011A7.94 7.94 0 0 0 8.47 0v2.368A6.11 6.11 0 0 1 2.368 8.47H0a7.94 7.94 0 0 0 2.011 4.855z"
+    ></path>
+    <path
+      fill="#919399"
+      d="M2.368 7.53A5.17 5.17 0 0 0 7.53 2.368V0a7.96 7.96 0 0 0-5.197 2.333A7.96 7.96 0 0 0 0 7.53z"
+    ></path>
   </svg>
 );

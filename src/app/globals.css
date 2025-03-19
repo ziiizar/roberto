@@ -1,15 +1,23 @@
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
-  --color-primary: var(--primary);
+  --color-primary-gradient-from: var(--primary-gradient-from);
+  --color-primary-gradient-via: var(--primary-gradient-via);
+  --color-primary-gradient-to: var(--primary-gradient-to);
   --color-secondary: var(--secondary);
+  --color-secondary-gradient-from: var(--secondary-gradient-from);
+  --color-secondary-gradient-via: var(--secondary-gradient-via);
+  --color-secondary-gradient-to: var(--secondary-gradient-to);
   --color-foreground: var(--foreground);
   --color-foreground-secondary: var(--foreground-secondary);
-
+  --color-main-mask-from: var(--main-mask-from);
+  --color-main-mask-via: var(--main-mask-via);
+  --color-main-mask-to: var(--main-mask-to);
   --color-dark-background: var(--dark-background);
   --color-dark-background-secondary: var(--dark-background-secondary);
   --color-dark-secondary: var(--dark-secondary);
@@ -25,12 +33,20 @@
 }
 
 :root {
-  --background: rgba(228, 228, 228, 1);
-  --background-secondary: #F4F4F4;
-  --primary: rgba(253, 115, 56, 0.95);
-  --secondary: #E1DEDD;   
-  --foreground: #3D3D3D;
-  --foreground-secondary: #3F3F3F;
+  --background: #171A23;
+  --background-secondary: #1F222B;
+  --main-mask-from:  #101219 ;
+  --main-mask-via: rgba(217, 217, 217, 0.64) ;
+  --main-mask-to: #181B24;
+  --primary-gradient-from:#4962FF;
+  --primary-gradient-via: #6A7EFF;
+  --primary-gradient-to: #3A55FF;
+  --secondary: #323845;   
+  --secondary-gradient-from: #343A47;
+  --secondary-gradient-via: #6A7EFF;
+  --secondary-gradient-to: #2C3140;
+  --foreground: #FFF;
+  --foreground-secondary: #919399;
 
   --shadow-form: 0 35px 35px rgba(255, 255, 255, 0.842); 
 
@@ -43,7 +59,6 @@
 
   --glass-border-light: rgba(248, 248, 248, 0.5);
   --glass-border-dark: rgba(248, 248, 248, 0.2);
-  --glass-gradient: linear-gradient(158deg, rgba(255, 255, 255, 0.06) 14.19%, rgba(255, 255, 255, 0) 50.59%, rgba(255, 255, 255, 0) 68.79%, rgba(255, 255, 255, 0.02) 105.18%);
 }
 
 /* Add mix-blend-mode support for Tailwind */
@@ -53,19 +68,35 @@
   }
 }
 
-signup-layout {
+.main-layout {
   display: grid;
   max-width: 100%;
   min-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
+  grid-template-rows: 8vh 1fr;
+  grid-template-columns: var(--aside-width, 280px) 1fr 300px;
   grid-template-areas: 
-  "header ",
-  "main ",
-  "footer ";
-  grid-template-columns:  1fr ;
-  grid-template-rows: 100px 1fr 100px;
+  "header header header"
+  "aside main secondary-aside"
+  ;
+  overflow: hidden;
 }
+
+.main-layout.expanded {
+  grid-template-columns: 280px 1fr 300px;
+  grid-template-areas:
+    "header header header"
+    "aside main secondary-aside";
+}
+
+.main-layout.collapsed {
+  grid-template-columns: 70px 1fr 300px;
+  grid-template-areas:
+    "header header header"
+    "aside main secondary-aside";
+}
+
 
 /* Special Button Background */
 .special-button-bg {
@@ -86,3 +117,27 @@ signup-layout {
 .form-shadow {-webkit-box-shadow: 1px -1px 70px 0px rgba(255, 255, 255, 0.75);
   -moz-box-shadow: 1px -1px 70px 0px rgba(255, 251, 251, 0.75);
   box-shadow: 1px -1px 70px 0px rgba(255, 253, 253, 0.75);}
+
+
+.custom-scrollbar {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent; /* For Firefox */
+  }
+
+  /* For Webkit browsers (Chrome, Safari, etc.) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }

@@ -22,11 +22,30 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) 
+
+  {
+    const themeColors = {
+      background: "#666",
+   
+    };
+
+    // :root {
+    //   --background: ${themeColors.background};
+     
+    // }
+    const customVariables = `
+  `;
+
+
   return (
     <html lang="en">
+      <head >
+        {customVariables && <style dangerouslySetInnerHTML={{ __html: customVariables }} />}
+      
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background dark:bg-dark-background transition-colors`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background dark:bg-dark-background transition-colors `}
       >
         <ThemeProvider>
           {children}

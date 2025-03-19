@@ -1,6 +1,6 @@
 'use client'
 
-import Header from "@/components/global/Header";
+import Header from "@/components/global/Header/Header";
 import { cn } from "@/lib/utils";
 import { primaryFont } from "@/styles/fonts";
 import SignUpForm from "@/components/auth/SignUpForm";
