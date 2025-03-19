@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "@/context/ThemeContext";
 
-export const EmailIcon = (props: React.SVGProps<SVGSVGElement>) => {
+export const EmailIcon = () => {
   const { theme } = useTheme();
   const isDarkMode = theme === 'dark';
   
@@ -32,7 +32,7 @@ export const EmailIcon = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 
-export const PasswordIcon: React.FC<React.SVGProps<SVGElement>> = (props) => {
+export const PasswordIcon: React.FC<React.SVGProps<SVGElement>> = () => {
   const { theme } = useTheme();
   const isDarkMode = theme === 'dark';
   
@@ -55,7 +55,7 @@ export const PasswordIcon: React.FC<React.SVGProps<SVGElement>> = (props) => {
   );
 };
 
-export const EyeIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+export const EyeIcon: React.FC<React.SVGProps<SVGElement>> = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -87,7 +87,7 @@ export const EyeIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
   </svg>
 );
 
-export const MoonIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+export const MoonIcon: React.FC<React.SVGProps<SVGElement>> = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="36"
@@ -151,7 +151,7 @@ export const PhoneIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const Logo: React.FC<React.SVGProps<SVGElement>> = (props) => (
+export const Logo: React.FC<React.SVGProps<SVGElement>> = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="148"
@@ -167,7 +167,7 @@ export const Logo: React.FC<React.SVGProps<SVGElement>> = (props) => (
   </svg>
 );
 
-export const GoogleIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+export const GoogleIcon: React.FC<React.SVGProps<SVGElement>> = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -201,7 +201,7 @@ export const GoogleIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
   </svg>
 );
 
-export const FacebookIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+export const FacebookIcon: React.FC<React.SVGProps<SVGElement>> = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
