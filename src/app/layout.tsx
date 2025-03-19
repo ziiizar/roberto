@@ -25,10 +25,10 @@ export default function RootLayout({
 }>) 
 
   {
-    const themeColors = {
-      background: "#666",
+    // const themeColors = {
+    //   background: "#666",
    
-    };
+    // };
 
     // :root {
     //   --background: ${themeColors.background};

@@ -5,9 +5,7 @@ import { CollapsibleNav } from "./Collapsible-nav"
 import { CasinoNavigationItems } from "@/constants/Links"
 import { cn } from "@/lib/utils"
 import { useSidebarStore } from "@/store/use-sidebar-store"
-import { Facebook, Instagram, Twitter } from "lucide-react"
 import { useEffect } from "react"
-import Link from "next/link"
 import Socials from "./Socials"
 
 export default function Aside() {
