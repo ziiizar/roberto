@@ -27,7 +27,7 @@ export function SearchBar({ placeholder = "Search", onSearch, className = "" }: 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
-          className="w-full py-2 pl-6 pr-12 text-foreground bg-background-secondary rounded-full border border-secondary/30 focus:outline-none focus:ring-1 focus:ring-primary-gradient-from placeholder:text-foreground-secondary/70"
+          className="w-full py-2 pl-6 pr-12 text-foreground bg-background-secondary rounded-full border border-border-primary focus:outline-none focus:ring-1 focus:ring-primary-gradient-from placeholder:text-foreground-secondary/70"
         />
         <button
           type="submit"

@@ -151,3 +151,56 @@ export const Sport = () => (
     ></path>
   </svg>
 );
+
+
+export const Twitter = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 256 256"
+  >
+    <path
+      fill="#4a729f"
+      strokeMiterlimit="10"
+      d="m26.37 26-8.795-12.822.015.012L25.52 4h-2.65l-6.46 7.48L11.28 4H4.33l8.211 11.971-.001-.001L3.88 26h2.65l7.182-8.322L19.42 26zM10.23 6l12.34 18h-2.1L8.12 6z"
+      fontFamily="none"
+      fontSize="none"
+      fontWeight="none"
+      style={{ mixBlendMode: "normal" }}
+      textAnchor="none"
+      transform="scale(8.53333)"
+    ></path>
+  </svg>
+);
+
+
+
+export const AsideCasino: React.FC<React.SVGProps<SVGElement>> = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="none"
+    viewBox="0 0 20 20"
+  >
+    <path
+      fill="url(#paint0_radial_2_2005)"
+      d="m17.883 4.402-1.846-2.228a.69.69 0 0 0-.74-.115l-.738.343a8.4 8.4 0 0 1-5.664.457c-.8-.228-1.662-.285-2.462-.285H2.616c-.37 0-.616.228-.616.571v6.628c0 .342.246.571.616.571h2.462c.37 0 .616-.229.616-.571 0-.915.8-1.657 1.847-1.657h3.118l-.923 1.028c-2.155 2.4-3.694 5.142-4.556 8.17 0 .115 0 .343.123.457.123.115.308.229.493.229h6.67c.37 0 .616-.229.616-.571 0-3.143.923-6.228 2.647-8.97l2.154-3.429c.185-.171.124-.4 0-.628"
+    ></path>
+    <defs>
+      <radialGradient
+        id="paint0_radial_2_2005"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientTransform="matrix(0 15.8489 -19.813 0 9.96 2)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#73DEFB"></stop>
+        <stop offset="0.484" stopColor="#28C5F0"></stop>
+        <stop offset="1" stopColor="#0D91B5"></stop>
+      </radialGradient>
+    </defs>
+  </svg>
+);

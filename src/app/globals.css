@@ -5,7 +5,11 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-primary-gradient-from: var(--background-primary-gradient-from);
+  --color-background-primary-gradient-to: var(--background-primary-gradient-to);
   --color-background-secondary: var(--background-secondary);
+  --color-background-secondary-gradient-from: var(--background-secondary-gradient-from);
+  --color-background-secondary-gradient-to: var(--background-secondary-gradient-to);
   --color-primary-gradient-from: var(--primary-gradient-from);
   --color-primary-gradient-via: var(--primary-gradient-via);
   --color-primary-gradient-to: var(--primary-gradient-to);
@@ -24,17 +28,22 @@
   --color-dark-foreground: var(--dark-foreground);
   --color-dark-foreground-secondary: var(--dark-foreground-secondary);
 
+  --color-border-primary: var(--border-primary);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --drop-shadow-button:  var(--shadow-button );
   --drop-shadow-glass:  var(--shadow-glass );
   --drop-shadow-form:  var(--shadow-form );
+  --shadow-header:  var(--shadow-header );
 }
 
 :root {
   --background: #171A23;
-  --background-secondary: #1F222B;
+  --background-primary-gradient-from: #171A23;
+  --background-primary-gradient-to: #181B24;
+  --background-secondary-gradient-from: #2c2f39;
+  --background-secondary-gradient-to: #222630;
   --main-mask-from:  #101219 ;
   --main-mask-via: rgba(217, 217, 217, 0.64) ;
   --main-mask-to: #181B24;
@@ -43,18 +52,22 @@
   --primary-gradient-to: #3A55FF;
   --secondary: #323845;   
   --secondary-gradient-from: #343A47;
-  --secondary-gradient-via: #6A7EFF;
   --secondary-gradient-to: #2C3140;
   --foreground: #FFF;
   --foreground-secondary: #919399;
 
-  --shadow-form: 0 35px 35px rgba(255, 255, 255, 0.842); 
+
+  --border-primary: #303541;
+
+
+  --shadow-header: 0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset;
 
   --dark-background: #202020;
   --dark-background-secondary: #2C2C2C;
   --dark-secondary: #343434;
   --dark-foreground: #EEEEEE;
   --dark-foreground-secondary: #BCBCBC;
+
 
 
   --glass-border-light: rgba(248, 248, 248, 0.5);
@@ -74,7 +87,7 @@
   min-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
-  grid-template-rows: 8vh 1fr;
+  grid-template-rows: 76px 1fr;
   grid-template-columns: var(--aside-width, 280px) 1fr 300px;
   grid-template-areas: 
   "header header header"
@@ -98,26 +111,9 @@
 }
 
 
-/* Special Button Background */
-.special-button-bg {
-  background: 
-    radial-gradient(361.9% 189.23% at 56.99% 100%, rgba(107, 49, 125, 0.00) 31.63%, rgba(139, 70, 166, 0.15) 55.89%, rgba(95, 19, 211, 0.31) 68.14%), 
-    radial-gradient(428.2% 169.86% at 50% 0%, rgba(118, 51, 46, 0.00) 32.39%, rgba(181, 134, 62, 0.15) 56.43%, rgba(182, 13, 0, 0.31) 68.15%), 
-    #FFF;
-}
-
-.dark-special-button-bg {
-  background: 
-    radial-gradient(361.9% 189.23% at 56.99% 100%, rgba(107, 49, 125, 0.00) 31.63%, rgba(139, 70, 166, 0.15) 55.89%, rgba(95, 19, 211, 0.31) 68.14%), 
-    radial-gradient(428.2% 169.86% at 50% 0%, rgba(118, 51, 46, 0.00) 32.39%, rgba(181, 134, 62, 0.15) 56.43%, rgba(182, 13, 0, 0.31) 68.15%), 
-    #202020;
-}
-
-
-.form-shadow {-webkit-box-shadow: 1px -1px 70px 0px rgba(255, 255, 255, 0.75);
-  -moz-box-shadow: 1px -1px 70px 0px rgba(255, 251, 251, 0.75);
-  box-shadow: 1px -1px 70px 0px rgba(255, 253, 253, 0.75);}
-
+.header-shadow {
+  box-shadow: 0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset;
+ }
 
 .custom-scrollbar {
     scrollbar-width: thin; /* For Firefox */

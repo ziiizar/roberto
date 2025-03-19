@@ -21,7 +21,7 @@ export default function Aside() {
   return (
     <aside
       className={cn(
-        "transition-all duration-300 ease-in-out [grid-area:aside] bg-background h-full overflow-y-auto custom-scrollbar flex flex-col justify-between",
+        "transition-all duration-300 ease-in-out [grid-area:aside] bg-gradient-to-tr from-background-primary-gradient-from to-background-primary-gradient-to h-full overflow-y-auto custom-scrollbar flex flex-col justify-between",
         collapsed ? "w-[var(--aside-width)] p-2" : "w-[var(--aside-width)] p-6",
       )}
     >

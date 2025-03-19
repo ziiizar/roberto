@@ -28,7 +28,7 @@ const HeaderLinks = ({ links }: { links: Links[] }) => {
             <Link
               href={link.href}
               className={cn(
-                'flex gap-2 items-center place-content-center  h-10 p-2  ps-3  hover:underline  transition-all text-white',
+                'flex gap-3 items-center place-content-center  h-10 p-2  ps-3  hover:underline  transition-all text-white',
                 // (link.href === cleanedPathname || cleanedPathname.startsWith(link.href))
                 (link.href === pathname || pathname.startsWith(link.href))
                  &&

@@ -1,6 +1,6 @@
 import { Links } from "@/types/links";
 import { routes } from "./routes";
-import { Sport, Casino} from "@/components/ui/icons";
+import { Sport, Casino, AsideCasino} from "@/components/ui/icons";
 import {
     Gamepad2,
     Dices,
@@ -48,7 +48,7 @@ export const AdminLinks: Links[] = [
     {
       title: "Casino",
       path: "/casino",
-      icon: <Number7 size={18} />,
+      icon: <AsideCasino />,
       children: [
         {
           title: "New Games",

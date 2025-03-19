@@ -12,7 +12,7 @@ export default function Main() {
                 />
             </div>
             
-            <div className="relative z-10 w-full h-full bg-gradient-to-r from-main-mask-from to-main-mask-to opacity-95 ">
+            <div className="relative z-10 w-full h-full bg-gradient-to-r from-main-mask-from to-main-mask-to opacity-90 ">
                 {/* Contenido que estará sobre la máscara */}
             </div>
         </main>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
-import { FaTwitter, FaTelegramPlane } from "react-icons/fa"; // Importamos de react-icons
+import {  FaTelegramPlane } from "react-icons/fa"; // Importamos de react-icons
+import { Twitter } from "@/components/ui/icons";
 
 const Socials = () => {
   return (
@@ -18,7 +19,7 @@ const Socials = () => {
         className="size-12 rounded-2xl bg-gradient-to-br from-[#1A1A1A] via-[#222222] to-[#1A1A1A] flex justify-center items-center text-[#1DA1F2]"
         href={"/"}
       >
-        <FaTwitter size={24} />
+        <Twitter />
       </Link>
 
       {/* Facebook */}
