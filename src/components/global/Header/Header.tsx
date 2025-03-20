@@ -9,11 +9,11 @@ import { SearchBar } from "./SearchBar";
 import Link from "next/link";
 import { useUserStore } from "@/store/use-user-store"; // Assuming this is the correct path
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-import { ChevronDown, Coins } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import NotificationButtons from "./Notifications";
 
 export const Header = () => {
-  const { loged: isLoggedIn, toggleLoged } = useUserStore();
+  const { loged: isLoggedIn } = useUserStore();
 
   return (
     <header className="[grid-area:header] bg-gradient-to-bl from-background-secondary-gradient-from to-background-secondary-gradient-to flex px-6 items-center justify-between drop-shadow-header">
