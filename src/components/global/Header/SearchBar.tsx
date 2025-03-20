@@ -20,7 +20,7 @@ export function SearchBar({ placeholder = "Search", onSearch, className = "" }: 
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`relative w-96 max-w-xl ${className}`}>
+    <form onSubmit={handleSubmit} className={`relative w-[240px] h-[44px] max-w-xl ${className}`}>
       <div className="relative flex items-center w-full">
         <input
           type="text"

@@ -111,7 +111,7 @@ export function CollapsibleNavItem({
 
       {hasChildren && isOpen && (
   <div className="relative">
-    <div className="absolute left-0 top-full w-full bg-secondary rounded-xl shadow-lg py-2">
+    <div className="absolute left-0 top-full w-full bg-background-secondary-gradient-from rounded-xl shadow-lg py-2">
       {item.children?.map((child) => (
         <CollapsibleNavItem key={child.path} item={child} level={level + 1} collapsed={collapsed} />
       ))}

@@ -8,7 +8,7 @@ export default function Main() {
                     src="https://assets.luckywolf.io/lw/bg/lw_rk_bg.png" 
                     alt="Background" 
                     fill
-                    className="object-cover"
+                    className="object-fill"
                 />
             </div>
             

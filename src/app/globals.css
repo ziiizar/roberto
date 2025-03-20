@@ -29,6 +29,7 @@
   --color-dark-foreground-secondary: var(--dark-foreground-secondary);
 
   --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -58,6 +59,7 @@
 
 
   --border-primary: #303541;
+  --border-secondary: #3F4655;
 
 
   --shadow-header: 0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset;
