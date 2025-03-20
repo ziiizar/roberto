@@ -17,7 +17,6 @@ import {
     Fish,
     Trophy,
     Scissors,
-    CodeIcon as Number7,
     Sparkles,
   } from "lucide-react"
   
