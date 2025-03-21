@@ -28,8 +28,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className={cn("w-full space-y-1", containerClassName)}>
         <div
           className={cn(
-            "flex items-center rounded-lg bg-secondary dark:bg-dark-secondary px-5 py-3 text-xs",
-            "focus-within:ring-1 focus-within:ring-ring rounded-4xl mb-5 transition-colors",
+            "mb-6",
             error ? "border-destructive" : "border-input",
             className
           )}
@@ -42,7 +41,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             type={type}
             className={cn(
-              "w-full bg-transparent placeholder:text-foreground dark:placeholder:text-dark-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:text-white",
+              "w-full h-[44px] px-4 py-3 rounded-lg bg-[#1C202B] text-foreground border border-[#303541] focus:outline-none focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:text-white",
               inputClassName
             )}
             ref={ref}

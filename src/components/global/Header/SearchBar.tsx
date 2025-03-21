@@ -20,14 +20,14 @@ export function SearchBar({ placeholder = "Search", onSearch, className = "" }: 
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`relative w-[240px] h-[44px] max-w-xl ${className}`}>
+    <form onSubmit={handleSubmit} className={`relative max-[1100px]:hidden w-[240px] h-[44px] max-w-xl ${className}`}>
       <div className="relative flex items-center w-full">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
-          className="w-full py-2 pl-6 pr-12 text-foreground bg-background-secondary rounded-full border border-border-primary focus:outline-none focus:ring-1 focus:ring-primary-gradient-from placeholder:text-foreground-secondary/70"
+          className="w-full py-2 pl-6 pr-12 text-foreground font-semibold bg-[#1C202B] rounded-full border border-[#303541] focus:outline-none focus:ring-1 focus:ring-primary-gradient-from placeholder:text-foreground-secondary/70"
         />
         <button
           type="submit"

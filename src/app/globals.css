@@ -5,18 +5,8 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-background-primary-gradient-from: var(--background-primary-gradient-from);
-  --color-background-primary-gradient-to: var(--background-primary-gradient-to);
   --color-background-secondary: var(--background-secondary);
-  --color-background-secondary-gradient-from: var(--background-secondary-gradient-from);
-  --color-background-secondary-gradient-to: var(--background-secondary-gradient-to);
-  --color-primary-gradient-from: var(--primary-gradient-from);
-  --color-primary-gradient-via: var(--primary-gradient-via);
-  --color-primary-gradient-to: var(--primary-gradient-to);
   --color-secondary: var(--secondary);
-  --color-secondary-gradient-from: var(--secondary-gradient-from);
-  --color-secondary-gradient-via: var(--secondary-gradient-via);
-  --color-secondary-gradient-to: var(--secondary-gradient-to);
   --color-foreground: var(--foreground);
   --color-foreground-secondary: var(--foreground-secondary);
   --color-main-mask-from: var(--main-mask-from);
@@ -40,29 +30,30 @@
 }
 
 :root {
-  --background: #171A23;
-  --background-primary-gradient-from: #171A23;
-  --background-primary-gradient-to: #181B24;
-  --background-secondary-gradient-from: #2c2f39;
-  --background-secondary-gradient-to: #222630;
+  --background: linear-gradient(152deg, #21242D 17.38%, #1C1F28 82.62%);
+
+  
+
+  --background-secondary: linear-gradient(180deg, #171A23 0%, #181B24 100%);
   --main-mask-from:  #101219 ;
   --main-mask-via: rgba(217, 217, 217, 0.64) ;
   --main-mask-to: #181B24;
-  --primary-gradient-from:#4962FF;
-  --primary-gradient-via: #6A7EFF;
-  --primary-gradient-to: #3A55FF;
-  --secondary: #323845;   
+  --primary: radial-gradient(123.83% 99.06% at 49.75% 0%, #6A7EFF 0%, #4962FF 48.44%, #3A55FF 100%);
+  --secondary: linear-gradient(180deg, #343A47 0%, #2C3140 100%); 
   --secondary-gradient-from: #343A47;
   --secondary-gradient-to: #2C3140;
   --foreground: #FFF;
   --foreground-secondary: #919399;
 
 
-  --border-primary: #303541;
-  --border-secondary: #3F4655;
+  --border-primary: 1.6px solid rgba(255, 255, 255, 0.15);
+  --border-secondary: 1.6px solid #3F4655;;
 
 
   --shadow-header: 0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset;
+  --shadow-primary:  0px 5.486px 14.629px 0px rgba(0, 0, 0, 0.15);
+  --shadow-secondary: 0px 5.43px 14.48px 0px rgba(0, 0, 0, 0.15);
+
 
   --dark-background: #202020;
   --dark-background-secondary: #2C2C2C;
@@ -138,4 +129,40 @@
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
+  }
+
+
+  .background-header {
+    background: var(--background);
+    box-shadow: 0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset;
+  }
+
+  .background-aside{
+    background: var(--background-secondary);
+    box-shadow: 0px 0px 12px 0px rgba(16, 19, 26, 0.32);
+  }
+
+  .background-primary {
+    background: var(--primary);
+    
+  }
+  
+
+  .background-secondary {
+    background: var(--secondary);
+
+  }
+
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  .shadow-primary {
+    box-shadow: var(--shadow-secondary);
+  }
+  
+  .border-primary {
+    border-top: var(--border-primary)
+  }
+  .border-secondary {
+    border-top: var(--border-secondary)
   }

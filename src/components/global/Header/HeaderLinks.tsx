@@ -19,7 +19,7 @@ const HeaderLinks = ({ links }: { links: Links[] }) => {
 //   const cleanedPathname = removeLocalePrefix(pathname);
 
   return (
-    <ul className="flex  gap-2 ps-2 flex-1 h-full place-content-center items-center">
+    <ul className="flex  gap-2 ps-2 flex-1 h-full place-content-center items-center max-lg:hidden">
       {links.map((link, index) => {
         const LinkIcon = link.icon;
 
@@ -28,7 +28,7 @@ const HeaderLinks = ({ links }: { links: Links[] }) => {
             <Link
               href={link.href}
               className={cn(
-                'flex gap-3 items-center place-content-center  h-full   hover:text-foreground  transition-all text-foreground-secondary',
+                'flex gap-3 items-center place-content-center font-semibold h-full   hover:text-foreground  transition-all text-foreground-secondary',
                 // (link.href === cleanedPathname || cleanedPathname.startsWith(link.href))
                 (link.href === pathname || pathname.startsWith(link.href))
                  &&

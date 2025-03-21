@@ -6,14 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/Tooltip";
 
-// Define the types for our navigation items
 type NavItem = {
   title: string;
   path: string;
@@ -41,55 +34,47 @@ export function CollapsibleNavItem({
 
   if (collapsed) {
     return (
-      <TooltipProvider delayDuration={300}>
-        <Tooltip>
-          <TooltipTrigger className="bg-transparent" asChild>
-            <div className="w-full mb-1">
-              <Link
-                href={item.path}
-                className={cn(
-                  "flex items-center w-full px-3 py-2 rounded-md text-sm",
-                  isActive || isChildActive
-                    ? "text-foreground bg-secondary/50"
-                    : "text-foreground-secondary hover:text-foreground hover:bg-secondary/30"
-                )}
-              >
-                <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center mr-2">
-                  {item.icon}
-                </span>
-              </Link>
-            </div>
-          </TooltipTrigger>
-          <TooltipContent side="right">
-            <p>{item.title}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <div className="mb-1">
+        <Link
+          href={item.path}
+          className={cn(
+            "flex items-center w-full px-3 py-2 rounded-md text-sm text-foreground-secondary hover:text-foreground hover:bg-secondary/30"
+          )}
+        >
+          <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center mr-2">
+            {item.icon}
+          </span>
+        </Link>
+      </div>
     );
   }
 
   return (
-    <div className="w-full mb-4">
+    <div className="w-full">
       <div
         className={cn(
-          "flex items-center justify-between w-full transition-all duration-200 h-12",
+          "flex items-center justify-between w-full transition-all duration-200 h-12 px-3 py-2",
+          isOpen && 'background-secondary border-secondary shadow-secondary transition-all duration-200',
           level === 0
-            ? "bg-background hover:bg-gradient-to-b from-secondary-gradient-from to-secondary-gradient-to rounded-xl"
+            ? "bg-background hover:bg-gradient-to-b from-secondary-gradient-from to-secondary-gradient-to rounded-xl relative z-10"
             : "",
-          isActive || isChildActive ? "bg-secondary" : ""
+          isActive || isChildActive ? "bg-secondary" : "",
+          // Si está abierto, forzamos el color foreground; de lo contrario, foreground-secondary
+          isOpen ? "text-foreground" : "text-foreground-secondary "
         )}
       >
         <Link
           href={item.path}
           className={cn(
-            "flex items-center flex-grow px-3 py-2 text-sm",
+            "flex items-center flex-grow  text-sm",
             level === 0 ? "font-medium" : "",
-            isActive || isChildActive
-              ? "text-foreground "
+            // Siempre que se haga hover se cambia a foreground
+            isOpen || isActive || isChildActive
+              ? "text-foreground"
               : "text-foreground-secondary hover:text-foreground"
           )}
         >
-          <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center mr-2 text-foreground-secondary">
+          <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center mr-2">
             {item.icon}
           </span>
           <span>{item.title}</span>
@@ -101,7 +86,10 @@ export function CollapsibleNavItem({
               e.preventDefault();
               setIsOpen(!isOpen);
             }}
-            className="p-[5px] mr-1 text-foreground-secondary   bg-background  rounded-full outline-1 outline-secondary transition-all duration-200"
+            className={cn(
+              "p-[5px] mr-1 bg-aside rounded-full outline-1 outline-secondary transition-all duration-200",
+              isOpen ? "text-foreground" : "text-foreground-secondary"
+            )}
             aria-label={isOpen ? "Collapse" : "Expand"}
           >
             {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -109,16 +97,25 @@ export function CollapsibleNavItem({
         )}
       </div>
 
-      {hasChildren && isOpen && (
-  <div className="relative">
-    <div className="absolute left-0 top-full w-full bg-background-secondary-gradient-from rounded-xl shadow-lg py-2">
-      {item.children?.map((child) => (
-        <CollapsibleNavItem key={child.path} item={child} level={level + 1} collapsed={collapsed} />
-      ))}
-    </div>
-  </div>
-)}
-
+      {/* Contenedor para los hijos con transición suave */}
+      {hasChildren && (
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-screen pt-6 -mt-6 relative background-secondary rounded-xl -z-0 " : "max-h-0"
+          }`}
+        >
+          <div className="  ">
+            {item.children?.map((child) => (
+              <CollapsibleNavItem
+                key={child.path}
+                item={child}
+                level={level + 1}
+                collapsed={collapsed}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -13,15 +13,15 @@ export interface ButtonProps
     {
       variants: {
         variant: {
-          default: "bg-gradient-to-br from-primary-gradient-from via-primary-gradient-via 0 to-primary-gradient-to  text-foreground dark:text-dark-foreground hover:from-blue-500 hover:to-blue-700 shadow-inner hover:shadow-white/30  active:bg-primary ",
+          default: "background-primary  text-foreground dark:text-dark-foreground hover:from-blue-500 hover:to-blue-700  hover:shadow-white/30  active:background-primary border-primary shadow-primary font-semibold hover:brightness-110" ,
           secondary:
-            "bg-gradient-to-b from-secondary-gradient-from  to-secondary-gradient-to text-foreground dark:bg-dark-secondary dark:text-dark-foreground hover:bg-secondary/70 active:bg-secondary/80 shadow-inner hover:shadow-white/10",
+            "background-secondary border-secondary shadow-secondary text-foreground-secondary dark:bg-dark-secondary dark:text-dark-foreground hover:background-secondary/70 active:background-secondary/80 s+ hover:shadow-white/10 font-semibold hover:brightness-120",
           destructive:
             "bg-red-500 text-dark-foreground dark:text-white hover:bg-red-500/70 active:bg-red-500/80",
        ghost: 'bg-transparent text-foreground',
           link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
           social: 'size-10 rounded-xl ',
-          outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground'
+          outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground font-semibold'
         },
         size: {
           default: "h-[44px] w-[122px]",
