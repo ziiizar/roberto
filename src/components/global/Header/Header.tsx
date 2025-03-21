@@ -13,7 +13,7 @@ import { ChevronDown } from "lucide-react";
 import NotificationButtons from "./Notifications";
 
 export const Header = () => {
-  const { loged: isLoggedIn } = useUserStore();
+  const { loged: isLoggedIn, toggleLoged } = useUserStore();
 
   return (
     <header className="[grid-area:header] bg-gradient-to-bl from-background-secondary-gradient-from to-background-secondary-gradient-to flex px-6 items-center justify-between drop-shadow-header">
@@ -71,7 +71,7 @@ export const Header = () => {
       {isLoggedIn ? (
         <div className="flex items-center gap-2 ml-2">
           <NotificationButtons></NotificationButtons>
-          <button className="flex items-center gap-2 px-3 py-1 rounded-md ">
+          <button onClick={toggleLoged} className="flex items-center gap-2 px-3 py-1 rounded-md ">
             <span className="text-gray-300">Max A.</span>
             <Avatar className="h-8 w-8 border border-gray-700">
               <AvatarImage src="https://github.com/shadcn.png" alt="User" />
@@ -86,7 +86,7 @@ export const Header = () => {
             <Link className="text-foreground" href={"#"}>
               Log in
             </Link>
-            <Button>Sign up</Button>
+            <Button onClick={toggleLoged} >Sign up</Button>
           </div>
         </>
       )}
