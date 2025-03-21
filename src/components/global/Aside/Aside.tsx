@@ -45,7 +45,7 @@ export default function Aside() {
           <CollapsibleNav items={CasinoNavigationItems} collapsed={collapsed} />
         </ul>
         <div className="bg-gray-700 h-[1.5px] w-full"></div>
-        <ul className="flex flex-col gap-4 text-foreground-secondary p-3">
+        <ul className={cn("flex flex-col gap-4 text-foreground-secondary p-3",{collapsed && "place-conter-center items-center"})}>
           <li className="flex  gap-3 text-foreground-secondary">
             <Rank></Rank>
             {!collapsed && <h4>Rank</h4> }
@@ -61,10 +61,11 @@ export default function Aside() {
         <Button
           variant={"secondary"}
           size={"full"}
-          className="bg-[#22263599] justify-start px-4 text-foreground-secondary "
+          className={cn("bg-[#22263599]  px-4 text-foreground-secondary ",{!collapsed && "justify-start"})}
         >
           <Support></Support>
-          Live Support
+          {!collapsed && <h4>Live Support</h4>}
+          
         </Button>
         {!collapsed && <Socials />}
       </div>
