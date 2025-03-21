@@ -48,11 +48,12 @@ export default function Aside() {
         <ul className="flex flex-col gap-4 text-foreground-secondary p-3">
           <li className="flex  gap-3 text-foreground-secondary">
             <Rank></Rank>
-<h4>Rank</h4>
+            {!collapsed && <h4>Rank</h4> }
+
           </li>
           <li className="flex items-center  gap-3 text-foreground-secondary">
             <Jackpot></Jackpot>
-            <h4>Jackpot</h4>
+            {!collapsed && <h4>Jackpot</h4> }
           </li>
         </ul>
       </div>
