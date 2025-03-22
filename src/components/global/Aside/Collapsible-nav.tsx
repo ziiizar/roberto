@@ -101,7 +101,7 @@ export function CollapsibleNavItem({
       {hasChildren && (
         <div
           className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-screen pt-6 -mt-6 relative background-secondary rounded-xl -z-0 " : "max-h-0"
+            isOpen ? "max-h-screen pt-6 -mt-6 relative background-secondary brightness-65 rounded-xl -z-0 " : "max-h-0"
           }`}
         >
           <div className="  ">

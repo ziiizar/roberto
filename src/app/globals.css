@@ -81,7 +81,7 @@
   min-height: 100vh;
   max-height: 100vh;
   grid-template-rows: 76px 1fr;
-  grid-template-columns: var(--aside-width, 280px) 1fr 300px;
+  grid-template-columns: var(--aside-width, 280px) 1fr 352px;
   grid-template-areas: 
   "header header header"
   "aside main secondary-aside"
@@ -90,18 +90,39 @@
 }
 
 .main-layout.expanded {
-  grid-template-columns: 280px 1fr 300px;
+  grid-template-columns: 280px 1fr 352px;
   grid-template-areas:
     "header header header"
     "aside main secondary-aside";
 }
 
 .main-layout.collapsed {
-  grid-template-columns: 70px 1fr 300px;
+  grid-template-columns: 70px 1fr 352px;
   grid-template-areas:
     "header header header"
     "aside main secondary-aside";
 }
+
+/* Transición y ocultación suave del Aside en pantallas menores a 770px */
+.aside-responsive {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 770px) {
+  /* Oculta el Aside: lo desliza y reduce su ancho, padding y opacidad */
+  .aside-responsive {
+    width: 0 !important;
+    padding: 0 !important;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  /* Ajusta el grid del layout para que el main ocupe el lugar del aside */
+  .main-layout {
+    grid-template-columns: 0 1fr 300px;
+  }
+}
+
 
 
 .header-shadow {

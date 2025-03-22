@@ -7,19 +7,23 @@ import HeaderLinks from "./HeaderLinks"
 import { AdminLinks } from "@/constants/Links"
 import { Button } from "@/components/ui/Button"
 import { SearchBar } from "./SearchBar"
-import Link from "next/link"
 import { useUserStore } from "@/store/use-user-store" // Assuming this is the correct path
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"
 import { ChevronDown } from "lucide-react"
 import NotificationButtons from "./Notifications"
 import RegistrationForm from "@/components/auth/RegistrationForm"
+import LoginForm from "@/components/auth/LoginForm"
 
 export const Header = () => {
   const { loged: isLoggedIn, toggleLoged } = useUserStore()
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false)
+  const [isLoginOpen, setIsLoginOpen] = useState(false)
 
   const openRegistration = () => setIsRegistrationOpen(true)
   const closeRegistration = () => setIsRegistrationOpen(false)
+
+  const openLogin = () => setIsLoginOpen(true)
+  const closeLogin = () => setIsLoginOpen(false)
 
   return (
     <>
@@ -33,7 +37,7 @@ export const Header = () => {
 
         {isLoggedIn ? (
           <div className="flex items-center gap-4  justify-between max-[1300px]:hidden">
-            <div className="flex items-center gap-2 w-[300px] h-[44px] bg-[#171A22] rounded-xl">
+            <div className="flex items-center  w-[300px] h-[44px] bg-[#171A22] rounded-xl">
               <div className="flex items-center gap-3 px-3 py-1 rounded-full ">
                 <GoldCoin />
                 <span className="text-foreground">0.00</span>
@@ -42,7 +46,7 @@ export const Header = () => {
                 </button>
               </div>
 
-              <div className=" h-6 w-[1.5px] bg-gray-700"></div>
+              <div className=" h-4 w-[1.5px] bg-gray-700"></div>
               <div className="flex items-center gap-3 px-3 py-1 rounded-full ">
                 <GreenCoin></GreenCoin>
                 <span className="text-foreground">0.00</span>
@@ -66,7 +70,7 @@ export const Header = () => {
         )}
 
         {isLoggedIn ? (
-          <div className="flex items-center gap-2 ml-2">
+          <div className="flex items-center gap-2 ml-2 w-[300px] justify-between">
             <NotificationButtons></NotificationButtons>
             <button onClick={toggleLoged} className="flex items-center gap-2 px-3 py-1 rounded-md ">
               <span className="text-foreground font-semibold">Max A.</span>
@@ -80,10 +84,12 @@ export const Header = () => {
         ) : (
           <>
             <div className="flex place-content-center items-center gap-6">
-              <Link className="text-foreground font-semibold" href={"#"}>
+              <button className="text-foreground font-semibold" onClick={openLogin}>
                 Log in
-              </Link>
-              <Button className="border-[#7A8BFE] border-[1px]"  onClick={openRegistration}>Sign up</Button>
+              </button>
+              <Button className="border-[#7A8BFE] border-[1px]" onClick={openRegistration}>
+                Sign up
+              </Button>
             </div>
           </>
         )}
@@ -91,6 +97,9 @@ export const Header = () => {
 
       {/* Registration Modal */}
       <RegistrationForm isOpen={isRegistrationOpen} onClose={closeRegistration} />
+
+      {/* Login Modal */}
+      <LoginForm isOpen={isLoginOpen} onClose={closeLogin} />
     </>
   )
 }

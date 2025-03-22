@@ -29,47 +29,48 @@ export default function Aside() {
   return (
     <aside
       className={cn(
-        "transition-all duration-300 ease-in-out [grid-area:aside] background-aside h-full overflow-y-auto custom-scrollbar flex flex-col justify-between font-semibold",
+        "transition-all duration-300 ease-in-out [grid-area:aside] background-aside h-full overflow-y-auto custom-scrollbar flex flex-col justify-between font-semibold aside-responsive",
         collapsed ? "w-[var(--aside-width)] p-2" : "w-[var(--aside-width)] p-6"
       )}
     >
+      {/* Contenido del aside */}
       <div className="flex flex-col gap-4 mb-4">
         {!collapsed && (
-        <div className="flex flex-col gap-4 mb-4">
-        {/* Botón Favorites */}
-        <Button
-          size="full"
-          className="flex items-center justify-between gap-3 px-4 py-2 
-                     rounded-xl background-primary 
-                     text-foreground shadow-primary border-primary hover:brightness-110 transition-all"
-        >
-          <div className="flex items-center gap-3">
-            {/* Ícono con Banner y FavoritesHeart superpuestos */}
-            <div className="relative w-6 h-6 flex items-center justify-center">
-              <Banner className="absolute inset-0" />
-              <FavoritesHeart className="absolute top-1 right-[10px]" />
-            </div>
-            <span className="font-medium">Favorites</span>
-          </div>
-          {/* “Badge” con el número 5 */}
-          <div className="bg-[#2F3BB2] w-5 h-5 flex items-center justify-center 
-                          rounded text-xs font-semibold">
-            5
-          </div>
-        </Button>
+          <div className="flex flex-col gap-4 mb-4">
+            {/* Botón Favorites */}
+            <Button
+              size="full"
+              className="flex items-center justify-between gap-3 px-4 py-2 
+                         rounded-xl background-primary 
+                         text-foreground shadow-primary border-primary hover:brightness-110 transition-all"
+            >
+              <div className="flex items-center gap-3">
+                {/* Ícono con Banner y FavoritesHeart superpuestos */}
+                <div className="relative w-6 h-6 flex items-center justify-center">
+                  <Banner className="absolute inset-0" />
+                  <FavoritesHeart className="absolute top-1 right-[10px]" />
+                </div>
+                <span className="font-medium">Favorites</span>
+              </div>
+              {/* “Badge” con el número 5 */}
+              <div className="bg-[#2F3BB2] w-5 h-5 flex items-center justify-center 
+                              rounded text-xs font-semibold">
+                5
+              </div>
+            </Button>
 
-        {/* Botón Recently Played */}
-        <Button
-          size="full"
-          variant={'secondary'}
-          className="flex justify-start gap-3 px-4 py-2 
-                     rounded-xl text-foreground-secondary 
-                     hover:text-foreground transition-colors"
-        >
-          <Recents />
-          <span className="font-medium">Recently Played</span>
-        </Button>
-      </div>
+            {/* Botón Recently Played */}
+            <Button
+              size="full"
+              variant={'secondary'}
+              className="flex justify-start gap-3 px-4 py-2 
+                         rounded-xl text-foreground-secondary 
+                         hover:text-foreground transition-colors"
+            >
+              <Recents />
+              <span className="font-medium">Recently Played</span>
+            </Button>
+          </div>
         )}
 
         <ul
@@ -88,27 +89,25 @@ export default function Aside() {
           )}
         >
           <li className="flex  gap-3 text-foreground-secondary">
-            <Rank></Rank>
+            <Rank />
             {!collapsed && <h4>Rank</h4>}
           </li>
           <li className="flex items-center  gap-3 text-foreground-secondary">
-            <Jackpot></Jackpot>
+            <Jackpot />
             {!collapsed && <h4>Jackpot</h4>}
           </li>
         </ul>
       </div>
-      <div className="flex flex-col gap-5 ">
-        <Button
-          variant={"secondary"}
-          size={"full"}
+      <div className="flex flex-col gap-5">
+        <button
           className={cn(
-            "bg-[#22263599]  px-4 text-foreground-secondary ",
+            "bg-[#181C27]   px-4 text-foreground-secondary flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium transition-colors shadow-button backdrop-blur-2xl cursor-pointer transition-all duration-20 h-[44px]",
             !collapsed && "justify-start"
           )}
         >
-          <Support></Support>
+          <Support />
           {!collapsed && <h4>Live Support</h4>}
-        </Button>
+        </button>
         {!collapsed && <Socials />}
       </div>
     </aside>

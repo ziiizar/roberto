@@ -448,30 +448,34 @@ export const Telegram = () => (
   </svg>
 );
 
-export const Twitter = () => (
+export const Twitter = ({className}:{className?: string}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
     fill="none"
     viewBox="0 0 16 16"
+    className={className}
   >
     <path
+    className={className}
       fill="#55BBFA"
       d="M9.522 6.775 15.48 0h-1.412L8.895 5.883 4.765 0H0l6.247 8.895L0 16h1.412l5.461-6.212L11.236 16H16zM7.59 8.974l-.633-.886L1.92 1.04h2.168l4.064 5.688.633.886 5.283 7.394H11.9z"
     ></path>
   </svg>
 );
 
-export const Facebook = () => (
+export const Facebook = ({className}:{className?: string}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="8"
     height="17"
     fill="none"
     viewBox="0 0 8 17"
+    className={className}
   >
     <path
+    className={className}
       fill="#7289DA"
       d="M4.836 16.364V8.18h2.152l.285-2.82H4.836L4.84 3.95c0-.736.066-1.13 1.072-1.13h1.346V0H5.106C2.52 0 1.61 1.368 1.61 3.668v1.693H0v2.82h1.611v8.183z"
     ></path>
@@ -492,6 +496,31 @@ export const Instagram = () => (
     ></path>
   </svg>
 );
+
+
+export const Google  = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    fill="none"
+    viewBox="0 0 18 18"
+  >
+    <path
+      fill="#919399"
+      d="M17.171 7.368H16.5v-.035H9v3.334h4.71A4.998 4.998 0 0 1 4 9a5 5 0 0 1 5-5c1.275 0 2.434.48 3.317 1.266l2.357-2.357A8.3 8.3 0 0 0 9 .667a8.334 8.334 0 1 0 8.171 6.7"
+    ></path>
+    <path
+      fill="#919399"
+      d="M1.628 5.121 4.365 7.13A5 5 0 0 1 9 4c1.275 0 2.434.48 3.317 1.266l2.357-2.357A8.3 8.3 0 0 0 9 .667 8.33 8.33 0 0 0 1.627 5.12M9 17.333a8.3 8.3 0 0 0 5.587-2.163l-2.58-2.182A4.96 4.96 0 0 1 9 14a5 5 0 0 1-4.701-3.31L1.58 12.782A8.33 8.33 0 0 0 9 17.333"
+    ></path>
+    <path
+      fill="#919399"
+      d="M17.171 7.368H16.5v-.035H9v3.334h4.71a5 5 0 0 1-1.703 2.321l2.58 2.182c-.182.165 2.746-2.003 2.746-6.17 0-.559-.057-1.104-.162-1.632"
+    ></path>
+  </svg>
+);
+
 
 export const Casino = () => (
   <svg
