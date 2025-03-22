@@ -72,7 +72,7 @@ export default function LoginForm({ isOpen, onClose }: LoginFormProps) {
             <h1 className="text-2xl font-bold text-foreground text-center mb-2">Log In</h1>
 
             <div className="mb-6 flex place-content-center items-center gap-2">
-              <span className="text-foreground-secondary">You don't have an account yet? </span>
+              <span className="text-foreground-secondary">{"You don't have an account yet?"} </span>
               <Link href="/signup" className="text-foreground font-medium">
                 Sign Up
               </Link>
