@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { GoldCoin, GreenCoin, Logo } from "../../ui/icons"
+import {  Logo } from "../../ui/icons"
 import AsideToggler from "./AsideToggler"
 import HeaderLinks from "./HeaderLinks"
 import { AdminLinks } from "@/constants/Links"
@@ -11,8 +11,9 @@ import { useUserStore } from "@/store/use-user-store" // Assuming this is the co
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"
 import { ChevronDown } from "lucide-react"
 import NotificationButtons from "./Notifications"
-import RegistrationForm from "@/components/auth/RegistrationForm"
-import LoginForm from "@/components/auth/LoginForm"
+import RegistrationForm from "@/components/auth/RegistrationModal"
+import LoginForm from "@/components/auth/LoginModal"
+import UserMoney from "./UserMoney"
 
 export const Header = () => {
   const { loged: isLoggedIn, toggleLoged } = useUserStore()
@@ -36,33 +37,7 @@ export const Header = () => {
         </div>
 
         {isLoggedIn ? (
-          <div className="flex items-center gap-4  justify-between max-[1300px]:hidden">
-            <div className="flex items-center  w-[300px] h-[44px] bg-[#171A22] rounded-xl">
-              <div className="flex items-center gap-3 px-3 py-1 rounded-full ">
-                <GoldCoin />
-                <span className="text-foreground">0.00</span>
-                <button className="p-[5px] mr-1 text-foreground-secondary background-secondary border-secondary cursor-pointer hover:from-gray-600 hover:shadow-gray-400/30 hover:to-gray-700 rounded-xl transition-all duration-200">
-                  <ChevronDown size={16} />
-                </button>
-              </div>
-
-              <div className=" h-4 w-[1.5px] bg-gray-700"></div>
-              <div className="flex items-center gap-3 px-3 py-1 rounded-full ">
-                <GreenCoin></GreenCoin>
-                <span className="text-foreground">0.00</span>
-                <button className="p-[5px] mr-1 text-foreground-secondary background-secondary border-secondary cursor-pointer hover:from-gray-600 hover:shadow-gray-400/30 hover:to-gray-700 rounded-xl transition-all duration-200">
-                  <ChevronDown size={16} />
-                </button>
-              </div>
-            </div>
-            <div className="flex -ml-10">
-              {" "}
-              <Button className="rounded-l-2xl rounded-r-none border border-[#6D80FE] ">Deposit</Button>
-              <Button variant="secondary" className="rounded-r-2xl rounded-l-none border border-[#3F4655]">
-                Withdraw
-              </Button>
-            </div>
-          </div>
+          <UserMoney></UserMoney>
         ) : (
           <div className="flex place-content-end items-center grow mr-28">
             <SearchBar></SearchBar>

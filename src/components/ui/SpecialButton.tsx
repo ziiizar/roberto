@@ -27,7 +27,7 @@ export const SpecialButton = forwardRef<HTMLButtonElement, SpecialButtonProps>(
           "text-foreground dark:text-dark-foreground font-medium",
           
           // Animaciones
-          "transition-all duration-300",
+          "transition-all duration-200",
           "hover:scale-105 active:scale-95",
           "hover:from-violet-500 hover:to-orange-400",
  

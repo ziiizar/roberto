@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/context/ThemeContext";
 import { primaryFont } from "@/styles/fonts";
 
 
@@ -45,9 +44,7 @@ export default function RootLayout({
       <body
         className={`${primaryFont.className} ${geistMono.variable} antialiased bg-background dark:bg-dark-background transition-colors `}
       >
-        <ThemeProvider>
           {children}
-        </ThemeProvider>
       </body>
     </html>
   );
